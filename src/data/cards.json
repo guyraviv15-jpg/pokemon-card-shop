@@ -1,0 +1,62 @@
+[
+  {
+    "id": "demo-1",
+    "name": "Charizard",
+    "set": "Base Set",
+    "number": "4/102",
+    "type": "Fire",
+    "rarity": "Holo Rare",
+    "condition": "Near Mint",
+    "price": 249.99,
+    "quantity": 1,
+    "imageUrl": "https://images.pokemontcg.io/base1/4_hires.png",
+    "description": "First edition Base Set Charizard in near mint condition. A true classic for any collector.",
+    "isSold": false,
+    "createdAt": "2026-06-01T10:00:00.000Z"
+  },
+  {
+    "id": "demo-2",
+    "name": "Pikachu",
+    "set": "Jungle",
+    "number": "60/64",
+    "type": "Electric",
+    "rarity": "Common",
+    "condition": "Mint",
+    "price": 4.99,
+    "quantity": 5,
+    "imageUrl": "https://images.pokemontcg.io/jungle/60_hires.png",
+    "description": "Pikachu from the Jungle set. Great condition, perfect for beginners.",
+    "isSold": false,
+    "createdAt": "2026-06-05T14:00:00.000Z"
+  },
+  {
+    "id": "demo-3",
+    "name": "Mewtwo",
+    "set": "Base Set 2",
+    "number": "14/130",
+    "type": "Psychic",
+    "rarity": "Rare",
+    "condition": "Excellent",
+    "price": 34.99,
+    "quantity": 2,
+    "imageUrl": "https://images.pokemontcg.io/base2/14_hires.png",
+    "description": "Mewtwo from Base Set 2. Excellent condition with only minor edge wear.",
+    "isSold": false,
+    "createdAt": "2026-06-10T09:00:00.000Z"
+  },
+  {
+    "id": "demo-4",
+    "name": "Gyarados",
+    "set": "Fossil",
+    "number": "6/62",
+    "type": "Water",
+    "rarity": "Holo Rare",
+    "condition": "Near Mint",
+    "price": 89.99,
+    "quantity": 1,
+    "imageUrl": "https://images.pokemontcg.io/fossil/6_hires.png",
+    "description": "Holo Gyarados from the Fossil set. Near mint, a stunning card.",
+    "isSold": false,
+    "createdAt": "2026-06-12T16:00:00.000Z"
+  }
+]
