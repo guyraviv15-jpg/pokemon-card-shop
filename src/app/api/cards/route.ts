@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const data = await request.json()
-    const card = createCard(data)
+    const card = await createCard(data)
     return NextResponse.json(card, { status: 201 })
   } catch {
     return NextResponse.json({ error: 'Failed to create card' }, { status: 400 })
@@ -34,7 +34,7 @@ export async function PUT(request: NextRequest) {
 
   try {
     const data = await request.json()
-    const card = updateCard(id, data)
+    const card = await updateCard(id, data)
     if (!card) {
       return NextResponse.json({ error: 'Card not found' }, { status: 404 })
     }
@@ -53,7 +53,7 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: 'Missing card ID' }, { status: 400 })
   }
 
-  const deleted = deleteCard(id)
+  const deleted = await deleteCard(id)
   if (!deleted) {
     return NextResponse.json({ error: 'Card not found' }, { status: 404 })
   }

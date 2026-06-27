@@ -9,7 +9,7 @@ export default async function AdminPage(props: {
   const authed = await isAuthenticated()
 
   if (authed) {
-    const cards = getCards()
+    const cards = await getCards()
     const totalCards = cards.length
     const availableCards = cards.filter(c => !c.isSold).length
     const totalValue = cards.reduce((sum, c) => sum + c.price * c.quantity, 0)

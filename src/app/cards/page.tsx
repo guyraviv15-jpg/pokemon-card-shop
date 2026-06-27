@@ -6,10 +6,10 @@ export default async function CardsPage(props: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const searchParams = await props.searchParams
-  const allCards = getCards()
-  const sets = getSets()
-  const types = getTypes()
-  const rarities = getRarities()
+  const allCards = await getCards()
+  const sets = await getSets()
+  const types = await getTypes()
+  const rarities = await getRarities()
 
   let filtered = allCards.filter(c => !c.isSold)
 

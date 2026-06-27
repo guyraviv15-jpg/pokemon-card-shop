@@ -2,8 +2,8 @@ import Link from "next/link"
 import { getCards } from "@/lib/data"
 import CardGrid from "@/components/CardGrid"
 
-export default function Home() {
-  const cards = getCards()
+export default async function Home() {
+  const cards = await getCards()
   const featured = cards.filter(c => !c.isSold).slice(0, 8)
 
   return (

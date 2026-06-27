@@ -19,7 +19,7 @@ interface TcgCard {
   types: string[]
   rarity: string | null
   images: { large: string; small: string }
-  set: { id: string; name: string }
+  set: { id: string; name: string; printedTotal: number }
 }
 
 interface ImportCard {

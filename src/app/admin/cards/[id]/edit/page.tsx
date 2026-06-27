@@ -10,7 +10,7 @@ export default async function EditCardPage(props: {
   const authed = await isAuthenticated()
   if (!authed) redirect('/admin')
 
-  const card = getCard(id)
+  const card = await getCard(id)
   if (!card) notFound()
 
   return (

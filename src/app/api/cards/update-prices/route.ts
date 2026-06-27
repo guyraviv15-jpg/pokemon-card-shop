@@ -34,7 +34,7 @@ export async function POST() {
     redirect('/admin')
   }
 
-  const cards = getCards()
+  const cards = await getCards()
   const results: { name: string; oldPrice: number; newPrice: number | null }[] = []
 
   for (let i = 0; i < cards.length; i++) {
@@ -55,7 +55,7 @@ export async function POST() {
     }
   }
 
-  writeCards(cards)
+  await writeCards(cards)
 
   const updated = results.filter(r => r.newPrice !== null).length
   redirect(`/admin?prices=${updated}&total=${cards.length}`)

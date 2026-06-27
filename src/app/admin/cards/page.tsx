@@ -21,7 +21,7 @@ export default async function AdminCardsPage() {
   const authed = await isAuthenticated()
   if (!authed) redirect('/admin')
 
-  const cards = getCards()
+  const cards = await getCards()
 
   return (
     <div>

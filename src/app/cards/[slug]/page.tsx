@@ -16,7 +16,7 @@ function rarityColor(rarity: string): string {
 }
 
 export async function generateStaticParams() {
-  const cards = getCards()
+  const cards = await getCards()
   return cards.map(card => ({
     slug: card.name.toLowerCase().replace(/\s+/g, '-'),
   }))
@@ -26,7 +26,7 @@ export default async function CardDetailPage(props: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await props.params
-  const card = getCardBySlug(slug)
+  const card = await getCardBySlug(slug)
 
   if (!card) notFound()
 

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No cards provided' }, { status: 400 })
     }
 
-    const existing = getCards()
+    const existing = await getCards()
     const now = new Date().toISOString()
     const newCards: PokemonCard[] = incoming.map((c: any) => ({
       id: crypto.randomUUID(),
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       createdAt: now,
     }))
 
-    writeCards([...existing, ...newCards])
+    await writeCards([...existing, ...newCards])
 
     return NextResponse.json({ count: newCards.length, cards: newCards }, { status: 201 })
   } catch {
