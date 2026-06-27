@@ -3,7 +3,7 @@ import { getCards } from "@/lib/data"
 import Link from "next/link"
 
 export default async function AdminPage(props: {
-  searchParams?: Promise<{ error?: string }>
+  searchParams?: Promise<{ error?: string; prices?: string; total?: string }>
 }) {
   const searchParams = await props.searchParams
   const authed = await isAuthenticated()
@@ -14,9 +14,18 @@ export default async function AdminPage(props: {
     const availableCards = cards.filter(c => !c.isSold).length
     const totalValue = cards.reduce((sum, c) => sum + c.price * c.quantity, 0)
 
+    const pricesUpdated = searchParams?.prices
+    const pricesTotal = searchParams?.total
+
     return (
       <div>
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+
+        {pricesUpdated && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700">
+            Updated prices for {pricesUpdated} of {pricesTotal} cards.
+          </div>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
           <div className="bg-white rounded-xl border border-gray-200 p-6">
             <p className="text-sm text-gray-500 mb-1">Total Cards</p>
@@ -45,6 +54,21 @@ export default async function AdminPage(props: {
           >
             Add New Card
           </Link>
+        </div>
+
+        <div className="mt-8 bg-white rounded-xl border border-gray-200 p-6">
+          <h2 className="font-semibold text-gray-900 mb-2">Market Prices</h2>
+          <p className="text-sm text-gray-500 mb-4">
+            Fetch current market prices from TCGPlayer (via Pokemon TCG API) for all unsold cards.
+          </p>
+          <form action="/api/cards/update-prices" method="post">
+            <button
+              type="submit"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            >
+              Fetch Market Prices
+            </button>
+          </form>
         </div>
       </div>
     )
