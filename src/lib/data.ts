@@ -57,12 +57,19 @@ function readCardsFromFile(): PokemonCard[] {
 }
 
 function writeCardsToFile(cards: PokemonCard[]) {
-  ensureDataDir()
-  fs.writeFileSync(CARDS_FILE, JSON.stringify(cards, null, 2), 'utf-8')
+  try {
+    ensureDataDir()
+    fs.writeFileSync(CARDS_FILE, JSON.stringify(cards, null, 2), 'utf-8')
+  } catch {
+    // filesystem may be read-only (Vercel), that's fine
+  }
 }
 
 async function readCards(): Promise<PokemonCard[]> {
-  if (isKvAvailable()) return readCardsFromKv()
+  if (isKvAvailable()) {
+    const fromKv = await readCardsFromKv()
+    if (fromKv.length > 0) return fromKv
+  }
   return readCardsFromFile()
 }
 
