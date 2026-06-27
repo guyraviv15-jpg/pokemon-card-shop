@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Pokemon Card Shop",
-  description: "Browse and purchase Pokemon cards from our collection",
+  title: "Guy's Pokemon Card Shop",
+  description: "Browse and purchase Pokemon cards from Guy's collection",
 }
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
             <div className="flex items-center justify-between h-16">
               <Link href="/" className="flex items-center gap-2">
                 <span className="text-2xl">⚡</span>
-                <span className="text-xl font-bold text-gray-900">Pokemon Card Shop</span>
+                <span className="text-xl font-bold text-gray-900">Guy's Pokemon Card Shop</span>
               </Link>
               <nav className="flex items-center gap-6">
                 <Link href="/" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
@@ -50,7 +50,7 @@ export default function RootLayout({
         </main>
         <footer className="bg-gray-900 text-gray-400 py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            &copy; {new Date().getFullYear()} Pokemon Card Shop. Not affiliated with The Pokemon Company.
+            &copy; {new Date().getFullYear()} Guy's Pokemon Card Shop. Not affiliated with The Pokemon Company.
           </div>
         </footer>
       </body>

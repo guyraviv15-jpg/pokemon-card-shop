@@ -10,7 +10,7 @@ export default async function Home() {
     <div>
       <section className="bg-gradient-to-br from-red-500 via-red-600 to-yellow-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <h1 className="text-5xl font-bold mb-4">Pokemon Cards For Sale</h1>
+          <h1 className="text-5xl font-bold mb-4">Guy's Pokemon Cards For Sale</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Browse our collection of authentic Pokemon cards. Rare finds, classic sets, and more.
           </p>
